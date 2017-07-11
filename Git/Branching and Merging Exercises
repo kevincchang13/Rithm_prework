@@ -1,0 +1,35 @@
+Part I
+Answer the following questions:
+
+1. What does git clean do?
+Remove untracked files from the working tree
+
+
+2. What do the -d and -f flags for git clean do?
+-d - removes untracked directories/files
+-f force an action
+
+3. What git command creates a branch?
+git checkout -b "branch"
+
+4. What is the difference between a fast-forward and recursive merge?
+Fast forward sees which commit comes first and put commits in chronological order.
+Recursive is for different commits at different times on two branches
+
+5. What git command changes to another branch?
+git checkout "branch"
+
+6. How do you remove modified or deleted files from the working directory?
+git checkout
+
+7. What git command deletes a branch?
+git branch -D "branch"
+
+8. What does the git diff command do?
+see changes between two commits
+
+9. How do you remove files from the staging area?
+
+
+10. How do merge conflicts happen?
+When two different users work on the same file and both make changes

@@ -1,0 +1,10 @@
+1. What is the difference between / and ~? What do we call each of these directories?
+/ is the root directory.
+~ is the home directory.
+
+2. What command do we use to change directories?
+cd
+
+3. What is the difference between an absolute and relative path?
+Absolute uses the root directory and contains all the folders that lead up to the folder.
+Relative path selects a folder that is relative to the folder I am currently in.
