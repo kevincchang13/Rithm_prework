@@ -94,7 +94,17 @@ multipleLetterCount
 // multipleLetterCount("hello"); // {h:1, e: 1, l: 2, o:1}
 // multipleLetterCount("person"); // {p:1, e: 1, r: 1, s:1, o:1, n:1}
 
-
+function mulitpleLetterCount(str) {
+	var answer = str.split("").reduce(function(obj,letter) {
+		if (!obj[letter]) {
+			obj[letter] = 1;
+		} else{
+			obj[letter]++;
+		}
+			return obj
+	}, {});
+	return answer
+}
 
 arrayManipulation
 // this function should take in at most four parameters (an array, command, location, and value).
@@ -106,7 +116,19 @@ arrayManipulation
 // arrayManipulation([1,2,3], "remove", "beginning"); // 1
 // arrayManipulation([1,2,3], "add", "beginning", 20); // [20,1,2,3]
 // arrayManipulation([1,2,3], "add", "end", 30); // [1,2,3,30]
-
+function arrayManipulation(arr,command,location,value) {
+	if (command === "remove" & location === "end") {
+		return arr.pop();
+	} else if (command === "remove" & location === "beginning") {
+		return arr.shift()
+	} else if (command === "add" & location === "beginning") {
+		arr.unshift(value);
+		return arr;
+	} else {
+		arr.push(value);
+		return arr;
+	}
+}
 
 isPalindrome
 // A Palindrome is a word, phrase, number, or other sequence of characters which reads the same backward or forward. This function should take in one parameter and returns true or false if it is a palindrome. As a bonus, allow your function to ignore whitespace and capitalization so that isPalindrome('a man a plan a canal Panama'); returns true
@@ -114,3 +136,36 @@ isPalindrome
 // isPalindrome('tacocat'); // true
 // isPalindrome('hannah'); // true
 // isPalindrome('robert'); // false
+function isPalindrome(str) {
+	for (var i = 0; i < str.length; i++) {
+		if (str[i].toLowerCase() === str[str.length-1-i].toLowerCase()){
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+
+
+// Part 3
+Rock / Paper / Scissor
+// using your knowledge so far, build a game of Rock/Paper/Scissor where through the use of the prompt function, a user can enter their choice and based on a random selection - they can either tie/win or lose against a computer.
+
+function roshambo(choice) {
+	var computerChoice;
+	if (Math.random() < 0.33) {
+		computerChoice = "scissor";
+	} else if (Math.random() > 0.66) {
+		computerChoice = "rock";
+	} else if ((Math.random() > 0.33) && (Math.random()/3 < 0.66)){
+		computerChoice = "paper";
+	}
+	if (choice === computerChoice) {
+		return "tie";
+	} else if ((choice === "rock" && computerChoice === "paper") || (choice === "paper" && computerChoice === "scissor") || (choice === "scissor" && computerChoice === "rock")) {
+		return "you lose";
+	} else {
+		return "you win";
+	}
+
+}
